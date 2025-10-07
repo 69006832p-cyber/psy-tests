@@ -7,41 +7,71 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #e0b3ff, #f8c8dc);
+      background: linear-gradient(135deg, #e0b3ff, #f8f8ff);
       color: #333;
       text-align: center;
       padding: 50px;
+      margin: 0;
     }
+
     h1 {
-      font-size: 2.5em;
+      font-size: 2.2em;
       margin-bottom: 20px;
     }
+
     p {
       font-size: 1.2em;
       max-width: 600px;
-      margin: 0 auto 40px;
+      margin: 0 auto 30px;
       line-height: 1.6;
     }
+
     a {
       display: inline-block;
       margin-top: 20px;
       padding: 12px 24px;
-      background: #6a0dad;
+      background-color: #8a2be2;
       color: white;
       text-decoration: none;
       border-radius: 10px;
-      transition: background 0.3s;
+      transition: background 0.3s ease;
     }
+
     a:hover {
-      background: #520a8b;
+      background-color: #6a0dad;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    .signature {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #4b0082;
     }
   </style>
 </head>
 <body>
   <h1>О проекте</h1>
-  <p>Этот сайт создан для того, чтобы помочь людям лучше узнать себя через интересные психологические тесты. 
-     Каждый тест направлен на изучение разных аспектов личности — от характера до эмоционального интеллекта.</p>
-  <p>Мы постоянно добавляем новые тесты и совершенствуем существующие, чтобы сделать самопознание лёгким и увлекательным процессом!Д1аяла нефор!!</p>
-  <a href="index.html">⬅ Вернуться на главную</a>
+  <p>
+    «Психо-тесты» — это небольшой сайт, созданный для тех, кто хочет лучше понять себя.  
+    Здесь вы можете пройти интересные психологические тесты, узнать больше о своих чертах личности  
+    и просто провести время с пользой.
+  </p>
+
+  <p>
+    Все тесты созданы в развлекательных и ознакомительных целях,  
+    но могут помочь вам задуматься о себе и своих привычках.
+  </p>
+
+  <a href="index.html">← На главную</a>
+
+  <footer>© 2025 Психо-тесты</footer>
+
+  <div class="signature">**Д1аяла нефор**</div>
 </body>
 </html>
