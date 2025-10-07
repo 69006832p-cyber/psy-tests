@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О проекте — Психо-тесты</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #e0b3ff, #f8c8dc);
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #6a0dad;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background 0.3s;
+    }
+    a:hover {
+      background: #520a8b;
+    }
+  </style>
+</head>
+<body>
+  <h1>О проекте</h1>
+  <p>Этот сайт создан для того, чтобы помочь людям лучше узнать себя через интересные психологические тесты. 
+     Каждый тест направлен на изучение разных аспектов личности — от характера до эмоционального интеллекта.</p>
+  <p>Мы постоянно добавляем новые тесты и совершенствуем существующие, чтобы сделать самопознание лёгким и увлекательным процессом!Д1аяла нефор!!</p>
+  <a href="index.html">⬅ Вернуться на главную</a>
+</body>
+</html>
