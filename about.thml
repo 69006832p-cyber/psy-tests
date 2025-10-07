@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О проекте MindFlow</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #4a90e2;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f0f0f0;
+      font-weight: bold;
+      color: #4a90e2;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>О проекте MindFlow</h1>
+  </header>
+
+  <main>
+    <p><strong>MindFlow</strong> — это интерактивная платформа для прохождения психологических тестов, направленных на развитие самопознания, эмоционального интеллекта и личностного роста.</p>
+
+    <p>Проект создан с целью помочь каждому пользователю лучше понять себя, выявить сильные стороны, а также получить рекомендации по саморазвитию на основе современных психологических методик.</p>
+
+    <p>Мы стремимся сделать процесс прохождения тестов лёгким, интересным и максимально полезным. Все результаты сохраняются анонимно, а сами тесты регулярно обновляются и дополняются новыми.</p>
+
+    <p><strong>Д1аяла нефор</strong></p>
+  </main>
+
+  <footer>
+    © 2025 MindFlow — интерактивные психологические тесты
+  </footer>
+</body>
+</html>
