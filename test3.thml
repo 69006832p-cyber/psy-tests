@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест на уверенность</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffc2d1, #ff9ee2);
+      text-align: center;
+      padding: 20px;
+    }
+    .question {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    button {
+      background-color: #a020f0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #d25fff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💪 Тест на уверенность в себе</h1>
+  <div id="quiz"></div>
+  <div id="result"></div>
+
+  <script>
+    const questions = [
+      { q: "1. Ты часто сомневаешься в своих решениях?", a: ["Да", "Нет"], s: [0, 2] },
+      { q: "2. Тебе легко высказывать своё мнение в компании?", a: ["Да", "Нет"], s: [2, 0] },
+      { q: "3. Ты чувствуешь себя спокойно в новых ситуациях?", a: ["Да", "Нет"], s: [2, 0] }
+    ];
+
+    let index = 0, score = 0;
+
+    const quiz = document.getElementById("quiz");
+    const result = document.getElementById("result");
+
+    function showQuestion() {
+      if (index < questions.length) {
+        const q = questions[index];
+        quiz.innerHTML = `
+          <div class="question">
+            <p>${q.q}</p>
+            <button onclick="answer(${q.s[0]})">${q.a[0]}</button>
+            <button onclick="answer(${q.s[1]})">${q.a[1]}</button>
+          </div>
+        `;
+      } else {
+        showResult();
+      }
+    }
+
+    function answer(points) {
+      score += points;
+      index++;
+      showQuestion();
+    }
+
+    function showResult() {
+      let message = "";
+      if (score <= 2) message = "Ты пока не очень уверен в себе, но всё приходит с опытом 💫";
+      else if (score <= 4) message = "Ты достаточно уверен, хотя иногда сомневаешься.";
+      else message = "Ты излучаешь уверенность! 🔥 Так держать!";
+
+      quiz.innerHTML = "";
+      result.innerHTML = `<h2>${message}</h2>
+      <a href="тесты.html"><button>Назад к выбору</button></a>`;
+    }
+
+    showQuestion();
+  </script>
+
+</body>
+</html>
