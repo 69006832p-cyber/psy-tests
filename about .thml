@@ -1,72 +1,63 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>О проекте MindFlow</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>О проекте</title>
   <style>
     body {
       font-family: "Segoe UI", sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      text-align: center;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
-
-    header {
-      background-color: #4a90e2;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
     h1 {
-      text-align: center;
-      color: #4a90e2;
+      font-size: 2.2em;
+      margin-bottom: 0.5em;
     }
-
     p {
-      margin-bottom: 20px;
-      font-size: 18px;
+      font-size: 1.2em;
+      max-width: 600px;
+      margin-bottom: 1.5em;
     }
-
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      padding: 20px;
-      background-color: #f0f0f0;
+    a {
+      display: inline-block;
+      background: #fff;
+      color: #2575fc;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 10px;
       font-weight: bold;
-      color: #4a90e2;
+    }
+    a:hover {
+      background: #2575fc;
+      color: #fff;
+    }
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>О проекте MindFlow</h1>
-  </header>
+  <h1>О проекте</h1>
+  <p>
+    Этот проект создан для того, чтобы помочь людям лучше понять себя через психологические тесты.
+    Здесь вы найдёте интересные и простые тесты, результаты которых помогут узнать что-то новое о себе.
+  </p>
 
-  <main>
-    <p><strong>MindFlow</strong> — это интерактивная платформа для прохождения психологических тестов, направленных на развитие самопознания, эмоционального интеллекта и личностного роста.</p>
+ <p><strong>💬 Д1аяла нефор</strong></p>
 
-    <p>Проект создан с целью помочь каждому пользователю лучше понять себя, выявить сильные стороны, а также получить рекомендации по саморазвитию на основе современных психологических методик.</p>
+<a href="index.html">⬅ На главную</a>
 
-    <p>Мы стремимся сделать процесс прохождения тестов лёгким, интересным и максимально полезным. Все результаты сохраняются анонимно, а сами тесты регулярно обновляются и дополняются новыми.</p>
-
-    <p><strong>Д1аяла нефор</strong></p>
-  </main>
-
-  <footer>
-    © 2025 MindFlow — интерактивные психологические тесты
-  </footer>
+<footer>© 2025 Психо-тесты</footer>
 </body>
-</html>
+</html> 
