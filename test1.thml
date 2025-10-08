@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест на тип личности</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #f8c1ff, #d1a4ff);
+      text-align: center;
+      padding: 20px;
+    }
+    .question {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    button {
+      background-color: #a020f0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #d25fff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧠 Тест на тип личности (MBTI)</h1>
+  <div id="quiz"></div>
+  <div id="result"></div>
+
+  <script>
+    const questions = [
+      { q: "1. Когда у тебя выходной, ты предпочитаешь:", a: ["Побыть дома", "Пойти на вечеринку"], t: ["I", "E"] },
+      { q: "2. При принятии решения ты чаще полагаешься на:", a: ["Факты и логику", "Интуицию и чувства"], t: ["T", "F"] },
+      { q: "3. Ты чувствуешь себя комфортно, когда:", a: ["План всё расписан", "Можно импровизировать"], t: ["J", "P"] }
+    ];
+
+    let scores = { I: 0, E: 0, T: 0, F: 0, J: 0, P: 0 };
+    let index = 0;
+
+    const quiz = document.getElementById("quiz");
+    const result = document.getElementById("result");
+
+    function showQuestion() {
+      if (index < questions.length) {
+        const q = questions[index];
+        quiz.innerHTML = `
+          <div class="question">
+            <p>${q.q}</p>
+            <button onclick="answer('${q.t[0]}')">${q.a[0]}</button>
+            <button onclick="answer('${q.t[1]}')">${q.a[1]}</button>
+          </div>
+        `;
+      } else {
+        showResult();
+      }
+    }
+
+    function answer(type) {
+      scores[type]++;
+      index++;
+      showQuestion();
+    }
+
+    function showResult() {
+      const type = `${scores.E > scores.I ? "E" : "I"}${scores.T > scores.F ? "T" : "F"}${scores.J > scores.P ? "J" : "P"}`;
+      quiz.innerHTML = "";
+      result.innerHTML = `<h2>Ваш тип личности: <b>${type}</b></h2>
+      <p>Спасибо за участие!</p>
+      <a href="тесты.html"><button>Назад к выбору</button></a>`;
+    }
+
+    showQuestion();
+  </script>
+
+</body>
+</html>
