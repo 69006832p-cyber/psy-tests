@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест на уровень стресса</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🌀 Тест на уровень стресса</h1>
+  <p>Ответьте на несколько вопросов, чтобы оценить уровень вашего стресса.</p>
+
+  <a href="tests.html" class="btn">← Назад к списку тестов</a>
+</body>
+</html>
