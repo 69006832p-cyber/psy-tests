@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест на тип личности (MBTI)</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #e2baff, #c3a7ff);
+      color: #333;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #4a148c;
+    }
+    .question {
+      background: #fff;
+      margin: 20px auto;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      text-align: left;
+    }
+    button {
+      background: #6a1b9a;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+    button:hover {
+      background: #8e24aa;
+    }
+    #result {
+      margin-top: 25px;
+      font-weight: bold;
+      color: #4a148c;
+      font-size: 18px;
+    }
+    a {
+      display: block;
+      margin-top: 20px;
+      color: #6a1b9a;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Тест на тип личности (MBTI)</h1>
+  <p>Выбери тот вариант, который тебе ближе.</p>
+
+  <form id="testForm">
+    <div class="question">
+      <p>1. Когда ты отдыхаешь, тебе больше нравится:</p>
+      <label><input type="radio" name="q1" value="E"> Быть с людьми, общаться</label><br>
+      <label><input type="radio" name="q1" value="I"> Побыть одному, зарядиться в одиночестве</label>
+    </div>
+
+    <div class="question">
+      <p>2. Как ты принимаешь решения?</p>
+      <label><input type="radio" name="q2" value="T"> Ориентируюсь на логику и факты</label><br>
+      <label><input type="radio" name="q2" value="F"> Ориентируюсь на чувства и отношения</label>
+    </div>
+
+    <div class="question">
+      <p>3. Как ты планируешь день?</p>
+      <label><input type="radio" name="q3" value="J"> Предпочитаю чёткий план</label><br>
+      <label><input type="radio" name="q3" value="P"> Действую спонтанно</label>
+    </div>
+
+    <button type="button" onclick="calculateResult()">Узнать результат</button>
+  </form>
+
+  <div id="result"></div>
+
+  <a href="tests.html">← Назад к тестам</a>
+
+  <script>
+    function calculateResult() {
+      const answers = {
+        q1: document.querySelector('input[name="q1"]:checked'),
+        q2: document.querySelector('input[name="q2"]:checked'),
+        q3: document.querySelector('input[name="q3"]:checked')
+      };
+
+      if (!answers.q1 || !answers.q2 || !answers.q3) {
+        alert("Пожалуйста, ответьте на все вопросы!");
+        return;
+      }
+
+      const resultCode = answers.q1.value + answers.q2.value + answers.q3.value;
+
+      let resultText = "";
+      switch (resultCode) {
+        case "ETJ":
+        case "ETF":
+          resultText = "Ты — энергичный и логичный лидер. Любишь порядок и чёткие цели.";
+          break;
+        case "IFJ":
+        case "IFP":
+          resultText = "Ты — чувствительный и заботливый человек, ценишь гармонию и покой.";
+          break;
+        case "ITJ":
+          resultText = "Ты — аналитик, любишь точность, структуру и самостоятельность.";
+          break;
+        default:
+          resultText = "Ты — гибкий и открытый исследователь, легко адаптируешься к изменениям.";
+      }
+
+      document.getElementById("result").innerText = "Результат: " + resultText;
+    }
+  </script>
+
+</body>
+</html>
