@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест на уровень стресса</title>
+  <style>
+    body { font-family: Arial; background: linear-gradient(135deg, #f9c2ff, #c3a0ff); text-align: center; padding: 20px; }
+    .question { background: #fff; border-radius: 15px; padding: 20px; margin: 20px auto; width: 90%; max-width: 600px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+    button { background-color: #a020f0; color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; }
+    button:hover { background-color: #d25fff; }
+  </style>
+</head>
+<body>
+
+  <h1>💆‍♀️ Тест на уровень стресса</h1>
+  <div id="quiz"></div>
+  <div id="result"></div>
+
+  <script>
+    const questions = [
+      { q: "1. Ты часто чувствуешь усталость без причины?", a: ["Да", "Нет"], s: [2, 0] },
+      { q: "2. Легко ли тебя вывести из себя?", a: ["Да", "Нет"], s: [2, 0] },
+      { q: "3. У тебя часто болит голова или мышцы?", a: ["Да", "Нет"], s: [2, 0] }
+    ];
+
+    let index = 0, score = 0;
+
+    const quiz = document.getElementById("quiz");
+    const result = document.getElementById("result");
+
+    function showQuestion() {
+      if (index < questions.length) {
+        const q = questions[index];
+        quiz.innerHTML = `
+          <div class="question">
+            <p>${q.q}</p>
+            <button onclick="answer(${q.s[0]})">${q.a[0]}</button>
+            <button onclick="answer(${q.s[1]})">${q.a[1]}</button>
+          </div>
+        `;
+      } else {
+        showResult();
+      }
+    }
+
+    function answer(points) {
+      score += points;
+      index++;
+      showQuestion();
+    }
+
+    function showResult() {
+      let message = "";
+      if (score <= 2) message = "У тебя низкий уровень стресса. Отлично!";
+      else if (score <= 4) message = "Умеренный уровень стресса. Немного отдыха не помешает.";
+      else message = "Высокий уровень стресса! Постарайся расслабиться и найти баланс.";
+
+      quiz.innerHTML = "";
+      result.innerHTML = `<h2>${message}</h2>
+      <a href="тесты.html"><button>Назад к выбору</button></a>`;
+    }
+
+    showQuestion();
+  </script>
+
+</body>
+</html>
