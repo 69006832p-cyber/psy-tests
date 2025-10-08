@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тест на эмоциональный интеллект</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #c1f0ff, #9ee6ff);
+      text-align: center;
+      padding: 20px;
+    }
+    .question {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    button {
+      background-color: #0099cc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #33bbff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💞 Тест на эмоциональный интеллект</h1>
+  <div id="quiz"></div>
+  <div id="result"></div>
+
+  <script>
+    const questions = [
+      { q: "1. Ты легко понимаешь настроение других людей?", a: ["Да", "Нет"], s: [2, 0] },
+      { q: "2. Ты умеешь сдерживать свои эмоции в трудных ситуациях?", a: ["Да", "Нет"], s: [2, 0] },
+      { q: "3. Ты стараешься поддерживать других, когда им плохо?", a: ["Да", "Нет"], s: [2, 0] }
+    ];
+
+    let index = 0, score = 0;
+
+    const quiz = document.getElementById("quiz");
+    const result = document.getElementById("result");
+
+    function showQuestion() {
+      if (index < questions.length) {
+        const q = questions[index];
+        quiz.innerHTML = `
+          <div class="question">
+            <p>${q.q}</p>
+            <button onclick="answer(${q.s[0]})">${q.a[0]}</button>
+            <button onclick="answer(${q.s[1]})">${q.a[1]}</button>
+          </div>
+        `;
+      } else {
+        showResult();
+      }
+    }
+
+    function answer(points) {
+      score += points;
+      index++;
+      showQuestion();
+    }
+
+    function showResult() {
+      let message = "";
+      if (score <= 2) message = "Ты ещё учишься понимать эмоции — это нормально 💛";
+      else if (score <= 4) message = "Ты неплохо понимаешь себя и других 🙂";
+      else message = "У тебя высокий эмоциональный интеллект 💖 Отличная эмпатия!";
+
+      quiz.innerHTML = "";
+      result.innerHTML = `<h2>${message}</h2>
+      <a href="тесты.html"><button>Назад к выбору</button></a>`;
+    }
+
+    showQuestion();
+  </script>
+
+</body>
+</html>
